@@ -67,6 +67,16 @@ K6-nopCommerce-Task/
 ```
 http://localhost:8047/
 ```
+---
+
+# ▶️ First Time Setup
+
+```bash
+git clone <your-repo-url>
+cd K6-nopCommerce-Task
+npm install
+npm init -y
+```
 
 ---
 
