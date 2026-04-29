@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
 import { BASE_URL } from '../config/config.js';
-import { generateReport } from '../utils/report.js';
+// import { generateReport } from '../utils/report.js';
 
 //Load CSV
 const searchData = new SharedArray('search data', function () {
@@ -94,8 +94,10 @@ export default function () {
     sleep(Math.random() * 2 + 1);
 }
 
-export function handleSummary(data) {
-    return generateReport(data, 'search');
-}
+// export function handleSummary(data) {
+//     return generateReport(data, 'search');
+// }
 
 //k6 run tests/search.test.js
+// k6 run tests/search.test.js --out csv=reports/search.csv
+// node utils/report.js search

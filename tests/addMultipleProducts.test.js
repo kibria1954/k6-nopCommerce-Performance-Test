@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
 import { BASE_URL, HEADERS } from '../config/config.js';
-import { generateReport } from '../utils/report.js';
+// import { generateReport } from '../utils/report.js';
 
 // =========================
 // LOAD USERS
@@ -222,8 +222,10 @@ export default function () {
 
     sleep(Math.random() * 2 + 1);
 }
-export function handleSummary(data) {
-    return generateReport(data, 'addMultipleProducts');
-}
+// export function handleSummary(data) {
+//     return generateReport(data, 'addMultipleProducts');
+// }
 
 // k6 run tests/addMultipleProducts.test.js
+// k6 run tests/addMultipleProducts.test.js --out csv=reports/addMultipleProducts.csv
+// node utils/report.js addMultipleProducts

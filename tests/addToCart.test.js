@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep, group } from 'k6';
 import { BASE_URL, HEADERS } from '../config/config.js';
-import { generateReport } from '../utils/report.js';
+// import { generateReport } from '../utils/report.js';
 
 export const options = {
     vus: 1,
@@ -107,8 +107,10 @@ export default function () {
 
     sleep(1);
 }
-export function handleSummary(data) {
-    return generateReport(data, 'addToCart');
-}
+// export function handleSummary(data) {
+//     return generateReport(data, 'addToCart');
+// }
 
 // k6 run tests/addToCart.test.js
+// k6 run tests/addToCart.test.js --out csv=reports/addToCart.csv
+// node utils/report.js addToCart

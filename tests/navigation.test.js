@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { BASE_URL } from '../config/config.js';
-import { generateReport } from '../utils/report.js';
+// import { generateReport } from '../utils/report.js';
 
 // Config
 export const options = {
@@ -59,8 +59,10 @@ export default function () {
     }
 }
 
-export function handleSummary(data) {
-    return generateReport(data, 'navigation');
-}
+// export function handleSummary(data) {
+//     return generateReport(data, 'navigation');
+// }
 
 //k6 run tests/navigation.test.js
+// k6 run tests/navigation.test.js --out csv=reports/navigation.csv
+// node utils/report.js navigation

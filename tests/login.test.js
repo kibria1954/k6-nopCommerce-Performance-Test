@@ -2,7 +2,8 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
 import { BASE_URL, HEADERS } from '../config/config.js';
-import { generateReport } from '../utils/report.js';
+// import { generateReport } from '../utils/report.js';
+// import { generateCSV } from '../utils/csvReport.js';
 
 // Load CSV data (users)
 const users = new SharedArray('users', function () {
@@ -89,8 +90,17 @@ export default function () {
     sleep(1);
 }
 
-export function handleSummary(data) {
-    return generateReport(data, 'login');
-}
+// export function handleSummary(data) {
+//     return {
+//         // HTML report
+//         ...generateReport(data, 'login'),
+
+//         // CSV report
+//         'reports/login.csv': generateCSV(data),
+//     };
+// }
+
 
 // k6 run tests/login.test.js
+// k6 run tests/login.test.js --out csv=reports/login.csv
+// node utils/report.js login

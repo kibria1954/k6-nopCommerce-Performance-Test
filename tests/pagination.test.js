@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { BASE_URL } from '../config/config.js';
-import { generateReport } from '../utils/report.js';
+// import { generateReport } from '../utils/report.js';
 
 export const options = {
     vus: 1,
@@ -66,8 +66,10 @@ export default function () {
     }
 }
 
-export function handleSummary(data) {
-    return generateReport(data, 'pagination');
-}
+// export function handleSummary(data) {
+//     return generateReport(data, 'pagination');
+// }
 
 //k6 run tests/pagination.test.js
+// k6 run tests/pagination.test.js --out csv=reports/pagination.csv
+// node utils/report.js pagination
